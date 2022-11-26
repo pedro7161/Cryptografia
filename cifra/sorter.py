@@ -4,16 +4,13 @@ class sorter():
     def create(word):
         alphabet = "abcdefghijklmnopqrstuvwxyz"
         arr1 = sorter.initialword(word)
-        arr2 = []
         for char in arr1:
-            for letter in alphabet:
-                if letter == char:
-                    # inserir o delete
-                    print(letter, char)
+            alphabet = alphabet.replace(char, '')
 
+        print(alphabet)
         for letter in alphabet:
             arr1.append(letter)
-        sorter.encrypttext()
+
         return arr1
 
     def initialword(word, arr1=[]):
