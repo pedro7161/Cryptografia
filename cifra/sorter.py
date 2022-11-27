@@ -3,17 +3,16 @@ class sorter():
 
     def create(word):
         alphabet = "abcdefghijklmnopqrstuvwxyz"
-        arr1 = sorter.initialword(word)
+        arr1 = sorter.MergeArrays(word)
         for char in arr1:
             alphabet = alphabet.replace(char, '')
 
         print(alphabet)
-        for letter in alphabet:
-            arr1.append(letter)
+        arr1 = sorter.MergeArrays(alphabet, arr1)
 
         return arr1
 
-    def initialword(word, arr1=[]):
+    def MergeArrays(word, arr1=[]):
         for char in word:
             arr1.append(char)
         return arr1
