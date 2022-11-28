@@ -19,7 +19,14 @@ class sorter():
 
     def encrypttext(sampletext, cifra, textoencriptado=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
         for letter in sampletext:
-            for position in len(alphabet):
+            for position in range(0, len(alphabet)):
+                if alphabet[position] == letter:
+                    textoencriptado.append(cifra[position])
+        return textoencriptado
+
+    def encrypttextreverse(sampletext, cifra, textoencriptado=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
+        for letter in sampletext:
+            for position in range(0, len(cifra)):
                 if cifra[position] == letter:
-                    textoencriptado.append(letter)
+                    textoencriptado.append(alphabet[position])
         return textoencriptado
