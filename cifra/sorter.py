@@ -17,16 +17,21 @@ class sorter():
             arr1.append(char)
         return arr1
 
-    def encrypttext(sampletext, cifra, textoencriptado=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
+    def encrypttext(sampletext, cifra, encryped_text=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
         for letter in sampletext:
             for position in range(0, len(alphabet)):
                 if alphabet[position] == letter:
-                    textoencriptado.append(cifra[position])
-        return textoencriptado
+                    encryped_text.append(cifra[position])
+        return encryped_text
 
-    def encrypttextreverse(sampletext, cifra, textoencriptado=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
+    def encrypttextreverse(sampletext, cifra, encryped_text=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
         for letter in sampletext:
             for position in range(0, len(cifra)):
                 if cifra[position] == letter:
-                    textoencriptado.append(alphabet[position])
-        return textoencriptado
+                    encryped_text.append(alphabet[position])
+        return encryped_text
+
+    def convertArrayToString(array, str1=""):
+        for ele in array:
+            str1 += ele
+        return str1
