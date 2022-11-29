@@ -17,18 +17,22 @@ class sorter():
             arr1.append(char)
         return arr1
 
-    def encrypttext(sampletext, cifra, encryped_text=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
+    def encrypttext(sampletext, cifra, alphabet="abcdefghijklmnopqrstuvwxyz"):
+        encryped_text = []
         for letter in sampletext:
             for position in range(0, len(alphabet)):
                 if alphabet[position] == letter:
                     encryped_text.append(cifra[position])
         return encryped_text
 
-    def encrypttextreverse(sampletext, cifra, encryped_text=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
+    def encrypttextreverse(sampletext="", cifra=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
+        encryped_text = []
         for letter in sampletext:
             for position in range(0, len(cifra)):
                 if cifra[position] == letter:
                     encryped_text.append(alphabet[position])
+                    print(letter, position)
+
         return encryped_text
 
     def convertArrayToString(array, str1=""):
