@@ -25,6 +25,7 @@ class sorter():
                     encryped_text.append(cifra[position])
                 elif letter == " ":
                     encryped_text.append(" ")
+                    break
         return encryped_text
 
     def encrypttextreverse(sampletext="", cifra=[], alphabet="abcdefghijklmnopqrstuvwxyz"):
@@ -35,6 +36,7 @@ class sorter():
                     encryped_text.append(alphabet[position])
                 elif letter == " ":
                     encryped_text.append(" ")
+                    break
         return encryped_text
 
     def convertArrayToString(array, str1=""):
