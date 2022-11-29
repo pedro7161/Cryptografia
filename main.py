@@ -22,4 +22,4 @@ print("texto encriptado usando o metodo qwerty: ",
       sorter.convertArrayToString(qwertyencrypted))
 
 print("texto desincreptado usando o metodo qwerty: ",
-      sorter.encrypttextreverse(qwertyencrypted, cifraqwerty))
+      sorter.convertArrayToString(sorter.encrypttextreverse(qwertyencrypted, cifraqwerty)))

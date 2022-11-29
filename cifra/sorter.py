@@ -31,7 +31,6 @@ class sorter():
             for position in range(0, len(cifra)):
                 if cifra[position] == letter:
                     encryped_text.append(alphabet[position])
-                    print(letter, position)
 
         return encryped_text
 
