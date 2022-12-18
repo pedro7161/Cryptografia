@@ -2,7 +2,6 @@ from helper.constants import ALPHABET_PHRASE
 from helper.utils import print_debug
 
 class Sorter():
-
     @staticmethod
     def create(word):
         alphabet = ALPHABET_PHRASE
@@ -24,27 +23,18 @@ class Sorter():
         return arr1
 
     @staticmethod
-    def encrypt_text(sample_text = "", cifra = "", alphabet = ALPHABET_PHRASE):
+    def apply_encryption(sample_text = "", cypher: list = None, reverse = False):
+        if cypher is None:
+            cypher = []
+
         encryped_text = []
 
         for letter in sample_text:
-            for position, value in enumerate(cifra):
-                if alphabet[position] == letter:
+            for position, value in enumerate(cypher):
+                if reverse and value == letter:
+                    encryped_text.append(ALPHABET_PHRASE[position])
+                elif not reverse and ALPHABET_PHRASE[position] == letter:
                     encryped_text.append(value)
-                elif letter.isspace():
-                    encryped_text.append(" ")
-                    break
-        return encryped_text
-
-    @staticmethod
-    def encrypt_text_reverse(sample_text = "", cifra = None, alphabet = ALPHABET_PHRASE):
-        if cifra is None:
-            cifra = []
-        encryped_text = []
-        for letter in sample_text:
-            for position, value in enumerate(cifra):
-                if value == letter:
-                    encryped_text.append(alphabet[position])
                 elif letter.isspace():
                     encryped_text.append(" ")
                     break
