@@ -14,7 +14,7 @@ def print_results(encrypted: str, decrypted: str):
     print("------------------ Results ----------------")
     print("\nText encrypted: ", encrypted)
     print("Text decrypted: ", decrypted, "\n")
-    input("Invalid selected option. Press ENTER to return to menu")
+    input("Press ENTER to return to menu")
 
 def main():
     while True:
