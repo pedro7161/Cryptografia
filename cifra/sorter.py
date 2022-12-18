@@ -33,6 +33,7 @@ class Sorter():
                     encryped_text.append(value)
                 elif letter.isspace():
                     encryped_text.append(" ")
+                    break
         return encryped_text
 
     @staticmethod
@@ -46,6 +47,7 @@ class Sorter():
                     encryped_text.append(alphabet[position])
                 elif letter.isspace():
                     encryped_text.append(" ")
+                    break
         return encryped_text
 
     @staticmethod
