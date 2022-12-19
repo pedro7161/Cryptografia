@@ -24,27 +24,28 @@ def main():
 
         if choise == "1":
             sample_text = input("\nWrite your text to be encoded using QWERTY cypher: \n>> ")
-            qwerty_encrypted = Sorter.encrypt_text(
-            sample_text.lower(), QWERTY_CIPHER)
+            qwerty_encrypted = Sorter.apply_encryption(sample_text.lower(), QWERTY_CIPHER)
 
             print_results(
                 Sorter.convert_array_to_string(array = qwerty_encrypted),
                 Sorter.convert_array_to_string(
-                    Sorter.encrypt_text_reverse(qwerty_encrypted, QWERTY_CIPHER))
+                    Sorter.apply_encryption(qwerty_encrypted, QWERTY_CIPHER, reverse = True))
             )
         elif choise == "2":
             initial_word = "".join(OrderedDict.fromkeys(
                 input("\nWrite your cypher text using Alphabet custom method: \n>> ")
             ))
             sampletext = input("\nWrite your text to be encoded: \n>> ")
-            cifra = Sorter.create(initial_word.lower())
-            encrypted_text = Sorter.encrypt_text(sampletext, cifra)
+            cifra = Sorter.create(initial_word.replace(" ", "").lower())
+            encrypted_text = Sorter.apply_encryption(sampletext, cifra)
 
-            print_debug(initial_word, cifra)
+            print_debug(initial_word, "".join(cifra))
 
             print_results(
                 Sorter.convert_array_to_string(encrypted_text),
-                Sorter.convert_array_to_string(Sorter.encrypt_text_reverse(encrypted_text, cifra))
+                Sorter.convert_array_to_string(
+                    Sorter.apply_encryption(encrypted_text, cifra, reverse = True)
+                    )
             )
         elif choise == "0":
             break
