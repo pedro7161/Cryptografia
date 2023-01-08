@@ -37,7 +37,7 @@ def main():
             ))
             sampletext = input("\nWrite your text to be encoded: \n>> ")
             cifra = Sorter.create(initial_word.replace(" ", "").lower())
-            encrypted_text = Sorter.apply_encryption(sampletext, cifra)
+            encrypted_text = Sorter.apply_encryption(sampletext.lower(), cifra)
 
             print_debug(initial_word, "".join(cifra))
 
