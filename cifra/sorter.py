@@ -1,10 +1,10 @@
-from helper.constants import ALPHABET_PHRASE
+from helper.constants import ALPHABET_PHRASE, QWERTY_CIPHER
 from helper.utils import print_debug
 
 class Sorter():
     @staticmethod
     def create(word):
-        alphabet = ALPHABET_PHRASE
+        alphabet = QWERTY_CIPHER
         arr1 = Sorter.merge_arrays(word)
         for char in arr1:
             alphabet = alphabet.replace(char, '')
