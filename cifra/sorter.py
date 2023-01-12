@@ -4,13 +4,13 @@ from helper.utils import print_debug
 class Sorter():
     @staticmethod
     def create(word):
-        alphabet = QWERTY_CIPHER
+        querty_cypher = QWERTY_CIPHER
         arr1 = Sorter.merge_arrays(word)
         for char in arr1:
-            alphabet = alphabet.replace(char, '')
+            querty_cypher = querty_cypher.replace(char, '')
 
-        print_debug(alphabet)
-        arr1 = Sorter.merge_arrays(alphabet, arr1)
+        print_debug(querty_cypher)
+        arr1 = Sorter.merge_arrays(querty_cypher, arr1)
 
         return arr1
 
