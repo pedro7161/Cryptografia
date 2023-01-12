@@ -19,7 +19,7 @@ def print_results(encrypted: str, decrypted: str):
 def main():
     while True:
         print_welcome_text()
-        choise = input("1 - Qwerty method \n2 - Alphabet with custom cypher method\
+        choise = input("1 - QWERTY method \n2 - QWERTY with custom cypher method\
             \n0 - Finish the program \n\n>> ")
 
         if choise == "1":
@@ -33,7 +33,7 @@ def main():
             )
         elif choise == "2":
             initial_word = "".join(OrderedDict.fromkeys(
-                input("\nWrite your cypher text using Alphabet custom method: \n>> ")
+                input("\nWrite your cypher text using QWERTY custom method: \n>> ")
             ))
             sampletext = input("\nWrite your text to be encoded: \n>> ")
             cifra = Sorter.create(initial_word.replace(" ", "").lower())
